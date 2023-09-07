@@ -1,0 +1,11 @@
+wheel
+mkdocs-material
+pillow
+cairosvg
+mkdocs-awesome-pages-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-autorefs
+mkdocs-autolinks-plugin
+mkdocs-minify-plugin
+mdx-breakless-lists
+mdx_truly_sane_lists
