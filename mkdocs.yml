@@ -1,0 +1,113 @@
+site_name: Triya's UF OSC Docs
+site_description: "Triya's documentation about things related the UF Open Source Club."
+site_url: https://pythiauf.github.io/Triya-UF-OSC-Docs/
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/favicon.ico
+
+  icon:
+    logo: material/book-cog
+    repo: fontawesome/brands/github
+
+  palette:
+    - scheme: automatic
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.tabs.link
+
+extra_css:
+  - assets/custom.css
+
+repo_url: https://github.com/PythiaUF/Triya-UF-OSC-Docs
+repo_name: PythiaUF/Triya-UF-OSC-Docs
+
+copyright: >
+  &copy Copyright 2023 Triya Verma –
+  <a href="#__consent">Change cookie settings</a>
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://pythiauf.github.io/Triya-UF-OSC-Docs/
+      name: Website Source
+    
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+
+plugins:
+  - search
+  - offline
+  - custom-cards:
+      cards_layout_options:
+        background_color: "#000000"
+        logo: assets/uf_osc.png
+  - autorefs
+  - autolinks
+  - awesome-pages
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      css_files:
+        - assets/custom.css
+
+markdown_extensions:
+  - admonition
+  - md_in_html
+  - abbr
+  - attr_list
+  - footnotes
+  - toc:
+      permalink: true
+  - mdx_breakless_lists
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+      truly_sane: true
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
