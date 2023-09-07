@@ -1,4 +1,5 @@
 nav:
-- python_version.md
-- discord_api.md
-- post_requests.md
+- API Group:
+  - python_version.md
+  - discord_api.md
+  - post_requests.md
