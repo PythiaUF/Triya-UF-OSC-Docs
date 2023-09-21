@@ -1,3 +1,8 @@
+---
+description: Learn how to set up a(n OSC) Python project from GitHub.
+---
+
+
 # Setting Up a Python Project From GitHub
 
 These are some basic steps for installing a Python project from GitHub. This more specifically relates to OSC's projects, but can be applied to many Python projects.
