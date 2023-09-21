@@ -5,6 +5,10 @@ title: Triya's UF OSC Docs
 # Triya's UF OSC Docs
 Triya's documentation about things related the UF Open Source Club.
 
+## Guides:
+
+- [Setting Up a Python Project From GitHub](guides/python_project.md)
+
 ## Exercises:
 
 ### API Group
