@@ -1,5 +1,5 @@
 wheel
-mkdocs-material==9.3.2
+mkdocs-material
 pillow
 cairosvg
 mkdocs-awesome-pages-plugin

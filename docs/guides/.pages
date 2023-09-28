@@ -1,2 +1,4 @@
 nav:
 - python_project.md
+- API Group:
+    - main_py_discord_bot.md

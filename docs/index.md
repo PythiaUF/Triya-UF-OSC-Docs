@@ -9,6 +9,9 @@ Triya's documentation about things related the UF Open Source Club.
 
 - [Setting Up a Python Project From GitHub](guides/python_project.md)
 
+### API Group
+- [What is main.py doing in Al Bot 3.0?](guides/main_py_discord_bot.md)
+
 ## Exercises:
 
 ### API Group
