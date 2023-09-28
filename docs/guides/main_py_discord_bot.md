@@ -1,6 +1,11 @@
+---
+description: A guide that explains main.py in Al Bot 3.0.
+---
+
+
 # What is main.py doing in Al Bot 3.0?
 
-# The Code
+## The Code
 *This may be changed in the future, but the format should look similar regardless.* You can see the latest copy of the code at [the GitHub Repo](https://github.com/ufosc/Al-Bot-3.0/blob/main/main.py).
 
 ```python
