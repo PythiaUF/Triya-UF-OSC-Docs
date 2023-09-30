@@ -99,7 +99,7 @@ from interactions.api.events import ChannelCreate
 
 @listen(MessageCreate)
 async def my_function(event: ChannelCreate):
-    ... # message is in event.message
+    ... # channel is in event.channel
 
 # or
 @listen()
