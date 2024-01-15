@@ -11,26 +11,28 @@ theme:
     repo: fontawesome/brands/github
 
   palette:
-    - scheme: automatic
+    - media: "(prefers-color-scheme)"
       primary: deep orange
       accent: deep orange
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
-
-    - scheme: slate
+    
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: deep orange
       accent: deep orange
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to dark mode
 
-    - scheme: default
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: deep orange
       accent: deep orange
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Switch to system preference
 
   features:
     - navigation.instant
@@ -42,6 +44,8 @@ theme:
     - search.share
     - toc.follow
     - content.tabs.link
+    - content.tooltips
+    - content.code.annotate
 
 extra_css:
   - assets/custom.css
@@ -70,6 +74,7 @@ extra:
 plugins:
   - search
   - offline
+  - privacy
   - custom-cards:
       cards_layout_options:
         background_color: "#000000"
@@ -108,7 +113,10 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.details
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

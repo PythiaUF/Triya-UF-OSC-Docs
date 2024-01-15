@@ -8,7 +8,7 @@ description: A guide that explains main.py in Al Bot 3.0.
 ## The Code
 *This may be changed in the future, but the format should look similar regardless.* You can see the latest copy of the code at [the GitHub Repo](https://github.com/ufosc/Al-Bot-3.0/blob/main/main.py).
 
-```python
+```python linenums="1"
 import os
 import contextlib
 import asyncio
@@ -16,33 +16,50 @@ import asyncio
 from interactions import Client, Intents, listen, slash_command, SlashContext
 from dotenv import load_dotenv
 
-load_dotenv()  # load the .env file
+load_dotenv()  # load the .env file (1)
 
-bot = Client(intents=Intents.DEFAULT)
-# intents are what events we want to receive from discord, `DEFAULT` is usually fine
+# intents are what events we want to receive from
+# discord, `DEFAULT` is usually fine
+bot = Client(intents=Intents.DEFAULT) # (2)!
 
 
-@listen()  # this decorator tells interactions.py that it needs to listen for the corresponding event, and run this coroutine
+# this decorator tells interactions.py that it needs to listen for
+# the corresponding event, and run this coroutine(6) when it happens (3)
+@listen()
 async def on_ready():
     # This event is called when the bot is ready to respond to commands
     print("Ready")
     print(f"This bot is owned by {bot.owner}")
 
 
-@slash_command()  # this decorator tells interactions.py to make a slash command with the corresponding name
+# this decorator tells interactions.py to make a slash command with the
+# corresponding name (4)
+@slash_command()
 async def ping(ctx: SlashContext):
-    # slash commands are always passed a SlashContext object, used to actually respond to the command
-    await ctx.send("Pong!")  # send a message to the channel the command was used in
+    # slash commands are always passed a SlashContext object,
+    # used to actually respond to the command
+
+    # send a message to the channel the command was used in
+    await ctx.send("Pong!")
 
 
+# the rest of this is just boilerplate code to start the bot (5)
 async def main():
     bot.load_extensions("exts")
     await bot.astart(os.environ["BOT_TOKEN"])
+
 
 if __name__ == "__main__":
     with contextlib.suppress(KeyboardInterrupt):
         asyncio.run(main())
 ```
+
+1.  See [Dotenv and Environmental Variables](#dotenv-and-environmental-variables) for more information.
+2.  See [Client and a Touch of interactions.py](#client-and-a-touch-of-interactionspy) for more information.
+3.  See [listen() and Events](#listen-and-events) for more information.
+4.  See [Slash Commands](#slash-commands) for more information.
+5.  See [The Rest of the Code](#the-rest-of-the-code) for more information.
+6.  A coroutine is a fancy type of function that allows you to use `await` in Python code. You don't need to worry about it too much, but if you see `async def` instead of `def`, that's what it means.
 
 ## Dotenv and Environmental Variables
 Skipping over the imports (they're just imports, nothing too important, they're just pieces of code from other people that we're using), let's explain the first line of proper code: `load_dotenv()`
@@ -131,7 +148,7 @@ The rest of the code is perhaps a bit too complex to explain (and honestly, it d
 
 [^1]: Not strictly true. Discord does indeed send a "READY" event when the bot is declared to have all of the basic requirements to start off getting real-time data, but this isn't strictly when the bot *has* the data it needs to be ready. Most critically, the bot doesn't know what servers it is in during the READY event - it actually receives information about each server its in on a rolling basis, getting data one by one around (but not necessarily before) the READY event. Many libraries, including interactions.py, wait for all of the guilds to come in and *then* dispatch the "ready" event, as to represent how the bot has all of the data it needs to get started.
 
-[^2]: A function "are self contained modules of code that accomplish a specific task. Functions usually take in data, process it, and return a result." - from [University of Utah](https://users.cs.utah.edu/~germain/PPS/Topics/functions.html)
+[^2]: A function "are self contained modules of code that accomplish a specific task. Functions usually take in data, process it, and return a result," as stated by the [University of Utah](https://users.cs.utah.edu/~germain/PPS/Topics/functions.html).
 For example, you could have a function that takes in a list of numbers and returns the average of them. If you need better examples, Google is your friend.
 These specifically are *coroutines*, which are asynchronous functions - you don't need to worry too much other than if you see something that uses `await`, you probably need a function that has `async def` instead of `def` to use it.
 
@@ -140,4 +157,4 @@ As for why you would ever use this - interactions.py specifically is using this 
 
 [^4]: Event objects being passed in can also be named anything. Sorry for only telling you this now, but no, it doesn't *have* to be `event`.
 
-[^5]: As for why Ping-pong... it's a programming joke. Don't worry about it.
+[^5]: As for why ping-pong... it's a programming joke. Don't worry about it.
