@@ -8,6 +8,7 @@ Triya's documentation about things related the UF Open Source Club.
 ## Guides:
 - [Setting Up a Python Project From GitHub](guides/python_project.md)
 - [What is main.py doing in Al Bot 3.0?](guides/main_py_discord_bot.md)
+- [Reviewing Pull Requests](guides/review_prs.md)
 
 ## Exercises:
 
