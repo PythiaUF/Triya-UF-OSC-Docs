@@ -12,7 +12,7 @@ class CustomSocialPlugin(SocialPlugin):
         if background := self.config.cards_layout_options.get("background_image"):
             image = Image.open(os.path.join(self.docs_dir, background))
             image = image.convert("RGBA")
-            image = image.resize(size, Image.LANCZOS)
+            image = image.resize(size, Image.Resampling.LANCZOS)
 
             if self.config.cards_layout_options.get("background_color"):
                 image.alpha_composite(super()._render_card_background(size, fill))
